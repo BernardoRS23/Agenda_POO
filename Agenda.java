@@ -41,7 +41,14 @@ public class Agenda {
     }
     
     public Contato pesquisarContato(String nome) {
-        
+        Set(String) chave = contatos.keySet();
+        for (String x: chave) {
+            if (x == nome) {
+                return contatos.get(x);
+            }
+        }
+
+        return null;
     }
     
     public boolean editarContato(Contato x) {
