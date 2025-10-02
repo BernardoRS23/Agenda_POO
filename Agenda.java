@@ -8,7 +8,7 @@ public class Agenda {
     
     public Agenda() {
         this.contatos = new HashMap<>();
-    }
+    } 
     
     public boolean adicionarItem(Contato x) {
         if(contatos.containsKey(x.getNome())) {
@@ -41,7 +41,7 @@ public class Agenda {
     }
     
     public Contato pesquisarContato(String nome) {
-        Set(String) chave = contatos.keySet();
+        Set<String> chave = contatos.keySet();
         for (String x: chave) {
             if (x == nome) {
                 return contatos.get(x);
@@ -52,6 +52,11 @@ public class Agenda {
     }
     
     public boolean editarContato(Contato x) {
-        
+        if(contatos.containsKey(x.getNome())) {
+            contatos.put(x.getNome(), x);
+            return true;
+        }
+
+        return false;
     }
 }
